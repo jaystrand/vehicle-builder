@@ -22,6 +22,7 @@ class Truck extends Vehicle implements AbleToTow {
   topSpeed: number;
   wheels: Wheel[];
   towingCapacity: number;
+  
 
   // Constructor that accepts properties of the Truck class
   constructor(
@@ -46,8 +47,17 @@ class Truck extends Vehicle implements AbleToTow {
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
-    this.wheels = wheels.length === 4 ? wheels : Array(4).fill(new Wheel());
+    this.wheels = wheels;
     this.towingCapacity = towingCapacity;
+
+    // Check if the wheels array has 4 elements
+    if (wheels.length !== 4) {
+      // If not, initialize the wheels array with 4 Wheel objects
+      this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
+    } else {
+      // If yes, assign the wheels array to the wheels property
+      this.wheels = wheels;
+    }
   }
 
   // Implement the towCapacity method from the AbleToTow interface
