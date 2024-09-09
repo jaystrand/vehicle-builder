@@ -5,10 +5,6 @@ import Car from './Car.js';
 import Wheel from './Wheel.js';
 import AbleToTow from '../interfaces/AbleToTow.js';
 
-// Define the AbleToTow interface
-// export interface AbleToTow {
-//   towCapacity(vehicle: Truck | Motorbike | Car): void;
-// }
 
 // Implement the Truck class that extends Vehicle and implements AbleToTow
 class Truck extends Vehicle implements AbleToTow {
